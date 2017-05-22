@@ -2,7 +2,15 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   def index
-    @jobs = Job.all
+    if params[:city].present? && params[:category].present?
+      @city = params[:city]
+      @category = params[:category]
+      @jobs = Job.where('city ilike ? AND category ilike ?',
+        "%#{params[:city]}%",
+        "%#{params[:category]}%")
+    else
+      @jobs = Job.all
+    end
   end
 
   def show
@@ -47,6 +55,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :description, :user_id)
+      params.require(:job).permit(:title, :city, :category, :description, :user_id)
     end
 end

@@ -1,0 +1,38 @@
+.card-jobs-index {
+  border-radius: 5px;
+  border: 1px solid $green;
+  position: relative;
+
+  .user-image {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 300px;
+    border-radius: 5px;
+
+    h2 {
+      margin-top: 0px;
+      position: absolute;
+      top:10px;
+      left:10px;
+      font-weight: lighter;
+    }
+
+    h3 {
+      position: absolute;
+      top: 25px;
+      left: 10px;
+      font-weight: lighter;
+    }
+  }
+
+  .card-jobs-description {
+    padding: 10px;
+
+    .job-rating-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+}

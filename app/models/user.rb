@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :requests
   has_many :received_requests, class_name: 'Request', through: :jobs
 
+  validates :sexe, inclusion: { in: ['man', 'woman'], allow_nil: false }
+  validates :first_name, presence: true
+  validates :last_name, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end

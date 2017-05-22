@@ -3,7 +3,7 @@ class Job < ApplicationRecord
   has_many :reviews
   has_many :messages
 
-  validates :category, inclusion: { in: %(gardener plumber electrician baby-sitter interior-designer), allow_nil: false }
+  validates :category, inclusion: { in: %w(gardener plumber electrician baby-sitter interior-designer), allow_nil: false }
   validates :title, presence: true
   validates :description, presence: true
 end

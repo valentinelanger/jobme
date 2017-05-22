@@ -1,26 +1,42 @@
 .btn-jobme {
   color: white;
-  background-color: $green;
+  background-color: $light-green;
   padding: 10px 15px;
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.75;
   transition: background 0.3s ease;
+  border: none;
   &:hover {
   color: white;
-  opacity: 0.9;
+  background-color: $green;
   text-decoration: none;
   }
 }
 
 .btn-jobme-default {
-  color: $green;
+  color: $light-green;
   padding: 10px 15px;
   border-radius: 50px;
-  opacity: 0.6;
+  border: none;
   &:hover {
   color: $green;
-  opacity: 0.9;
+  text-decoration: none;
+  }
+}
+
+#btn-jobme-search {
+  padding: 15px 60px;
+  color: white;
+  background-color: $light-green;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.75;
+  transition: background 0.3s ease;
+  border: none;
+  &:hover {
+  color: white;
+  background-color: $green;
   text-decoration: none;
   }
 }

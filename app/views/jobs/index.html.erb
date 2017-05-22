@@ -1,31 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Jobs</h1>
+<div class="wrapper">
+  <h1 class="text-center">Our best <%= @category %>s in <%= @city %>! </h1>
+  <div class="container">
+    <div class="row">
+      <% @jobs.each do |job| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-jobs-index" >
+            <div class="user-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= image_path(job.user.photo) %>');">
+              <h2><%= "#{job.user.first_name.capitalize} #{job.user.last_name.capitalize}" %></h2>
+              <h3><%= "#{job.category.capitalize} in #{job.city.capitalize}"%></h3>
+            </div>
+            <div class="card-jobs-description">
+              <div class="job-description">
+                <h2><%=job.title.capitalize%></h2>
+                <p><%=job.description.capitalize%></p>
+              </div>
+              <div class="job-rating-links">
+                <p> Rating: ***** </p>
+                <div class="links-job">
+                  <%= link_to 'Show', job, class:'btn-jobme-default' %>
+                  <%= link_to 'Edit', edit_job_path(job), class:'btn-jobme-default' %>
+                  <%= link_to 'Destroy', job, class:'btn-jobme-default',method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to 'New Job', new_job_path %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.title %></td>
-        <td><%= job.description %></td>
-        <td><%= job.user %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Job', new_job_path %>

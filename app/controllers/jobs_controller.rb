@@ -23,7 +23,6 @@ class JobsController < ApplicationController
       else
         render :new
       end
-    end
   end
 
   def update
@@ -32,7 +31,6 @@ class JobsController < ApplicationController
       else
         render :edit
       end
-    end
   end
 
   def destroy

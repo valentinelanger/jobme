@@ -10,10 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522130426) do
+ActiveRecord::Schema.define(version: 20170522134940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_jobs_on_user_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "destinator_id"
+    t.integer  "creator_id"
+    t.integer  "job_id"
+    t.text     "content"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["creator_id"], name: "index_messages_on_creator_id", using: :btree
+    t.index ["destinator_id"], name: "index_messages_on_destinator_id", using: :btree
+    t.index ["job_id"], name: "index_messages_on_job_id", using: :btree
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_requests_on_job_id", using: :btree
+    t.index ["user_id"], name: "index_requests_on_user_id", using: :btree
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "job_id"
+    t.integer  "creator_id"
+    t.string   "title"
+    t.text     "content"
+    t.integer  "rating"
+    t.integer  "destinator_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["creator_id"], name: "index_reviews_on_creator_id", using: :btree
+    t.index ["destinator_id"], name: "index_reviews_on_destinator_id", using: :btree
+    t.index ["job_id"], name: "index_reviews_on_job_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -32,4 +78,13 @@ ActiveRecord::Schema.define(version: 20170522130426) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "jobs", "users"
+  add_foreign_key "messages", "jobs"
+  add_foreign_key "messages", "users", column: "creator_id"
+  add_foreign_key "messages", "users", column: "destinator_id"
+  add_foreign_key "requests", "jobs"
+  add_foreign_key "requests", "users"
+  add_foreign_key "reviews", "jobs"
+  add_foreign_key "reviews", "users", column: "creator_id"
+  add_foreign_key "reviews", "users", column: "destinator_id"
 end

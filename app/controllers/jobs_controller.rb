@@ -28,20 +28,21 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
+    @job.user = current_user
 
-      if @job.save
-        redirect_to @job, notice: 'Job was successfully created.'
-      else
-        render :new
-      end
+    if @job.save
+      redirect_to @job, notice: 'Job was successfully created.'
+    else
+      render :new
+    end
   end
 
   def update
-      if @job.update(job_params)
-        redirect_to @job, notice: 'Job was successfully updated.'
-      else
-        render :edit
-      end
+    if @job.update(job_params)
+      redirect_to @job, notice: 'Job was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -58,6 +59,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :city, :category, :description, :user_id)
+      params.require(:job).permit(:title, :city, :category, :description)
     end
 end

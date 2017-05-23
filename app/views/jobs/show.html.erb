@@ -1,12 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <div class="wrapper">
-  <%= link_to " Back to all #{@category}s in #{@city.capitalize}", jobs_path(category: @category, city: @city), class:"fa fa-arrow-left" %>
+  <%= link_to jobs_path(category: @category, city: @city), class: "default-link" do %>
+    <%= icon('arrow-left') %> Back to all <%= @category %>s in <%= @city.capitalize %>
+  <% end %>
   <div class="container">
     <div class="index-show-top-card">
       <div class="row">
         <div class="col-xs-12 col-sm-6">
-          <div class="pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= image_path(@job.user.photo) %>');">
+          <div class="pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= image_path(@job.user.photo || @job.user.facebook_picture_url) %>');">
           </div>
         </div>
         <div class="col-xs-12 col-sm-6">

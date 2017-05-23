@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523094351) do
+ActiveRecord::Schema.define(version: 20170523145848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,9 +34,11 @@ ActiveRecord::Schema.define(version: 20170523094351) do
     t.text     "content"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "request_id",    null: false
     t.index ["creator_id"], name: "index_messages_on_creator_id", using: :btree
     t.index ["destinator_id"], name: "index_messages_on_destinator_id", using: :btree
     t.index ["job_id"], name: "index_messages_on_job_id", using: :btree
+    t.index ["request_id"], name: "index_messages_on_request_id", using: :btree
   end
 
   create_table "requests", force: :cascade do |t|
@@ -47,6 +49,7 @@ ActiveRecord::Schema.define(version: 20170523094351) do
     t.datetime "updated_at",    null: false
     t.integer  "creator_id",    null: false
     t.integer  "destinator_id", null: false
+    t.datetime "confirmed_at"
     t.index ["creator_id"], name: "index_requests_on_creator_id", using: :btree
     t.index ["destinator_id"], name: "index_requests_on_destinator_id", using: :btree
     t.index ["job_id"], name: "index_requests_on_job_id", using: :btree
@@ -94,6 +97,7 @@ ActiveRecord::Schema.define(version: 20170523094351) do
 
   add_foreign_key "jobs", "users"
   add_foreign_key "messages", "jobs"
+  add_foreign_key "messages", "requests"
   add_foreign_key "messages", "users", column: "creator_id"
   add_foreign_key "messages", "users", column: "destinator_id"
   add_foreign_key "requests", "jobs"

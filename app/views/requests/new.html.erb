@@ -1,2 +1,5 @@
-<h1>Requests#new</h1>
-<p>Find me in app/views/requests/new.html.erb</p>
+<h1>When do you need <%= @job.user.first_name %> to help you?</h1>
+
+<%= render 'form', request: @request %>
+
+<%= link_to 'Back', job_path(@job) %>

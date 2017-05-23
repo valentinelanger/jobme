@@ -8,12 +8,6 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
@@ -54,11 +48,11 @@
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Become a professional"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link btn-jobme-default" %>
+      <%= link_to t(".sign_in", default: "Become a professional"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link navbar-jobme-button" %>
 
+      <%= link_to t(".top_call_to_action", default: "Sign in"), new_user_session_path, class: "navbar-wagon-item navbar-jobme-button" %>
+      <%= link_to t(".top_call_to_action", default: "Sign up"), new_user_registration_path, class: "navbar-wagon-item navbar-jobme-button" %>
 
-
-      <%= link_to t(".top_call_to_action", default: "Sign in"), new_user_session_path, class: "navbar-wagon-item btn-jobme btn" %> | <%= link_to t(".top_call_to_action", default: "Sign in"), new_user_session_path, class: "navbar-wagon-item btn-jobme btn" %>
 
     <% end %>
 

@@ -5,5 +5,6 @@ class Job < ApplicationRecord
 
   validates :category, inclusion: { in: %w(gardener plumber electrician baby-sitter interior-designer), allow_nil: false }
   validates :title, presence: true
+  validates :title, length: { maximum: 20 }
   validates :description, presence: true
 end

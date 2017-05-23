@@ -1,0 +1,93 @@
+.fa-arrow-left {
+  font-weight: lighter;
+  font-color: $gray;
+}
+
+.index-show-top-card {
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.6);
+  margin-top: 20px;
+
+  .pic {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .main-info {
+    position: relative;
+    padding: 15px;
+
+    h2 {
+      font-weight: lighter;
+      font-size: 25px;
+    }
+
+    .desc .fa {
+      font-size: 15px;
+      font-weight: lighter;
+    }
+
+    .rating {
+      position: absolute;
+      top: 45px;
+      right: 35px;
+
+      .color {
+        color: $green;
+      }
+
+    }
+
+    .job-reservation {
+      text-align: right;
+    }
+  }
+}
+
+
+.index-show-bottom-card {
+
+  .contact {
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.6);
+    margin-top: 20px;
+    // margin-right: 10px;
+    padding: 10px;
+
+    h4 {
+      font-weight: lighter;
+    }
+  }
+
+  .job-description {
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.6);
+    margin-top: 20px;
+    padding: 10px;
+
+
+    h2 {
+      font-weight: lighter;
+      margin-top: 0px;
+      font-size: 25px;
+      color: $green;
+    }
+
+    h4 {
+      font-size: 15px;
+      font-weight: lighter;
+    }
+
+  }
+}
+
+.index-show-review-card {
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.6);
+  margin-top: 20px;
+}
+
+

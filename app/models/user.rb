@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :received_messages, class_name: 'Message', foreign_key: 'destinator_id'
   has_many :sent_messages, class_name: 'Message', foreign_key: 'creator_id'
   has_many :requests
+  has_many :jobs
   has_many :received_requests, class_name: 'Request', through: :jobs
 
   validates :sexe, inclusion: { in: ['man', 'woman'], allow_nil: false }

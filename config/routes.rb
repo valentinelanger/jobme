@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'requests/index'
+
+  get 'requests/show'
+
+  get 'requests/new'
+
+  get 'requests/create'
+
+  get 'requests/edit'
+
+  get 'requests/update'
+
+  get 'requests/destroy'
+
   resources :jobs do
     resources :reviews, only: [:new, :create]
     resources :messages, only: [:new, :create]

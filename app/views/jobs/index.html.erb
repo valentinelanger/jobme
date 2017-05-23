@@ -24,7 +24,7 @@
                 </div>
               </div>
               <div class="job-description">
-                <p><%=job.description.capitalize%></p>
+                <p><%=truncate(job.description.capitalize, length: 110)%></p>
               </div>
             </div>
           </div>

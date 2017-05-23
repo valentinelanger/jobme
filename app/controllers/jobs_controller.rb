@@ -14,6 +14,9 @@ class JobsController < ApplicationController
   end
 
   def show
+    @user = @job.user
+    @city = @job.city
+    @category = @job.category
   end
 
   def new

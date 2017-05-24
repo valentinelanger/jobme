@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get 'messages/index'
 
-  get 'messages/new'
-
-  get 'messages/create'
+  get 'messages/conversations'
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

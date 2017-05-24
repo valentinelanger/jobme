@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <div class="conversations-list">
+          <% @conversations.each do |message| %>
+
+            <div class="conversation-card">
+
+              <%= link_to '', job_request_messages_path(message.job, message.request), class: 'card-link' %>
+
+              <div class="interlocuteur-info">
+                <% if message.creator == @user %>
+                  <% @interlocuteur = message.destinator %>
+                <% else %>
+                  <% @interlocuteur = message.creator %>
+                <% end %>
+                <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= image_path(@interlocuteur.photo) %>');"></div>
+                <h4><%= @interlocuteur.first_name%></h4>
+              </div>
+
+              <div class="last-message">
+                <h4><%= message.job.category %></h4>
+                <p><%= message.content %></p>
+              </div>
+
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

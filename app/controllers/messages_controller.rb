@@ -8,12 +8,6 @@ class MessagesController < ApplicationController
     @destinator = destinator
   end
 
-  # def new
-  #   @message = Message.new
-  #   @job = Job.find(params[:job_id])
-  #   @request = Request.find(params[:request_id])
-  # end
-
   def create
     @job = Job.find(params[:job_id])
     @request = Request.find(params[:request_id])
@@ -28,6 +22,19 @@ class MessagesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def conversations
+    @user = current_user
+    @requests = @user.requests
+    @conversations = []
+    @requests.each do |request|
+      unless request.messages.empty?
+        @conversations << request.messages.last
+      end
+    end
+
+    p @conversations
   end
 
   private

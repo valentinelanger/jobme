@@ -79,4 +79,26 @@
   }
 }
 
+.card-user {
+  background-color: white !important;
+  margin: 0px 60px;
+  padding: 40px 0px;
+  border-radius: 3px;
+  h2 {
+    margin: 0px;
+  }
+}
 
+.card-confirmation {
+  position: relative;
+  background-color: white !important;
+  margin: 0px 60px;
+  padding: 40px 0px;
+  border-radius: 3px;
+  .title, .description {
+    margin: 0px 30px;
+  }
+  .title h2 {
+    margin-top: 0px;
+  }
+}

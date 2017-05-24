@@ -6,6 +6,6 @@ class Job < ApplicationRecord
 
   validates :category, inclusion: { in: CATEGORIES, allow_nil: false }
   validates :title, presence: true
-  validates :title, length: { maximum: 20 }
+  validates :title, length: { maximum: 30 }
   validates :description, presence: true
 end

@@ -59,43 +59,19 @@
           </div>
         </div>
       </div>
-      <div class="index-show-review-card">
-        <%= @job.reviews.each do |review| %>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6">
-              <div class="creator-info">
-                <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= image_path(review.creator.photo) %>');"></div>
-                  <h4><%= review.creator.first_name%></h4>
-              </div>
-              <div class="review-content">
+    </div>
+    <div class="index-show-review-card">
+      <% @job.reviews.each do |review| %>
+            <div class="creator-info">
+            <%= image_tag image_path(review.creator.photo), class: "avatar-large" %>
+              <h4><%= review.creator.first_name%></h4>
+              <h4>Rating: <%= review.rating %>/5</h4>
+            </div>
+            <div class="review-content">
                 <h2><%= review.title %></h2>
                 <h4><%= review.content %></h4>
-                <h4><%= review.rating %></h4>
-              </div>
             </div>
-          </div>
-        <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
-
-
-<!--
-<p>
-  <strong>Title:</strong>
-  <%= @job.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @job.description %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @job.user %>
-</p>
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %> -->

@@ -33,8 +33,6 @@ class MessagesController < ApplicationController
         @conversations << request.messages.last
       end
     end
-
-    p @conversations
   end
 
   private

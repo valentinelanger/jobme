@@ -88,10 +88,37 @@
 }
 
 .index-show-review-card {
+  padding: 10px;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.6);
   margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  h2 {
+    font-weight: lighter;
+    font-size: 25px;
+    color: $green;
+  }
+
+  h4 {
+    font-weight: lighter;
+    font-size: 20px;
+  }
+
+  .creator-info {
+    margin-left: 50px;
+    margin-right: 90px;
+
+  }
+
+  .review-content {
+    flex-grow: 1;
+    text-align: left;
+
+  }
 }
 
 

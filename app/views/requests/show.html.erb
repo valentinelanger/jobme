@@ -1,6 +1,28 @@
-<h1>Requests#show</h1>
-<p><%=@job.user.first_name%></p>
-<p><%=@job.category%></p>
-<p><%= @request.start_at.strftime('%A, %e %B, from %l %P') %> to <%= @request.end_at.strftime('%l %P') %></p>
-<%= link_to "Send #{@request.destinator.first_name} a message",job_request_messages_path(@job, @request), class:'btn-jobme' %>
+<div class="card-confirmation">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+
+      <div class="title">
+        <h2>This is your request:</h2>
+      </div>
+
+      <div class="description">
+        <p><%=@job.user.first_name%> <%=@job.user.last_name%></p>
+        <p><%=@job.category%></p>
+
+        <p><strong>The time slot you booked:</strong></p>
+        <p><%= @request.start_at.strftime('%A, %e %B, from %l %P') %> to <%= @request.end_at.strftime('%l %P') %></p>
+        <p>We remind you that you have to <strong>wait for <%=@job.user.first_name%> approval</strong></p>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <div class="links">
+        <%= link_to "Send #{@request.destinator.first_name} a message",job_request_messages_path(@job, @request), class: 'btn-jobme text-center' %>
+        <%= link_to "Update your request", job_request_path(@request), class: 'btn-jobme-default2 text-center' %>
+        <%= link_to 'Delete your request', job_request_path(@request), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-jobme-default2 text-center' %>
+      </div>
+    </div>
+  </div>
+</div>
 

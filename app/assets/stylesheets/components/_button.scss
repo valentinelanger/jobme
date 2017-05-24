@@ -25,6 +25,20 @@
   }
 }
 
+.btn-jobme-default2 {
+  color: $gray;
+  padding: 10px 15px;
+  border-radius: 50px;
+  border: 1px solid $gray;
+  &:hover {
+  opacity: 1;
+  color: $pink;
+  border: 1px solid $pink;
+  text-decoration: none;
+  }
+}
+
+
 #btn-jobme-search {
   padding: 15px 60px;
   color: white;

@@ -1,0 +1,24 @@
+<div class="card-user">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="center">
+        <div class="picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= @user.facebook_picture_url %>');">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <h2>Your profile account</h2>
+
+      <h5>Name:</h5>
+      <ul>
+        <li><%= @user.first_name %></li>
+        <li><%= @user.last_name %></li>
+      </ul>
+
+      <h5>Gender:</h5>
+      <%= @user.sexe %>
+    </div>
+  </div>
+
+</div>

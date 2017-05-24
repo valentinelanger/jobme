@@ -3,13 +3,16 @@ class MessagesController < ApplicationController
   def index
     @request = Request.find(params[:request_id])
     @messages = @request.messages
-  end
-
-  def new
     @message = Message.new
     @job = Job.find(params[:job_id])
-    @request = Request.find(params[:request_id])
+    @destinator = destinator
   end
+
+  # def new
+  #   @message = Message.new
+  #   @job = Job.find(params[:job_id])
+  #   @request = Request.find(params[:request_id])
+  # end
 
   def create
     @job = Job.find(params[:job_id])

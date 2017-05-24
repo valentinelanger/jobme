@@ -1,2 +1,28 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+<div class="wrapper">
+  <h1 class="text-center">Your conversation with <%= @destinator.first_name.capitalize%></h1>
+  <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+          <div class="messages-conversation">
+            <% @request.messages.each do |message| %>
+              <div class="sender">
+                <p><%= message.content %></p>
+              </div>
+            <% end %>
+            <%= simple_form_for([@job, @request, @message]) do |f| %>
+              <%= f.error_notification %>
+              <div class="form-inputs">
+                <%= f.input :content %>
+              </div>
+              <div class="form-actions">
+                <%= f.button :submit %>
+              </div>
+            <% end %>
+            <%= link_to 'Back to your request', job_request_path(@job, @request), class:'btn-jobme' %>
+            <%= link_to 'Back to your research', jobs_path(category: @job.category, city: @job.city) ,class:'btn-jobme' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

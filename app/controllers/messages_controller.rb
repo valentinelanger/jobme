@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
     @message = Message.new
     @job = Job.find(params[:job_id])
     @destinator = destinator
+    @interlocutor = interlocutor
   end
 
   def create
@@ -43,6 +44,14 @@ class MessagesController < ApplicationController
 
   def destinator
     if @creator == @job.user
+      @request.creator
+    else
+      @request.destinator
+    end
+  end
+
+  def interlocutor
+    if @request.destinator == current_user
       @request.creator
     else
       @request.destinator

@@ -1,0 +1,49 @@
+.navbar-profile {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07), 0 1px 0 0 rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+  display: flex;
+  height: 60px;
+  padding: 20px 30px 5px 30px;
+  align-items: left;
+  justify-content: space-between;
+  text-align: center;
+  cursor: pointer;
+
+  a {
+    text-align: center;
+  }
+
+  .navbar-jobme-button {
+  position: relative;
+  min-width: 100px;
+  height: 60px;
+  margin: 0px 10px;
+  color: $light-gray;
+  font-size: 16px;
+  font-weight: bolder;
+  background-color: transparent;
+  padding: 10px 15px;
+  transition: background 0.3s ease;
+  border: none;
+  text-align: center;
+  &:hover {
+    color: $pink;
+    background-color: transparent;
+    text-decoration: none;
+    }
+  &:hover:after {
+    position: absolute;
+    border-bottom: 2px solid $pink;
+    top: 51px;
+    left: 0;
+    right: 0;
+    content: "";
+    }
+  }
+}
+
+.navbar-right-links {
+  height: 100%;
+  max-width: 1000px;
+  text-align: center;
+}

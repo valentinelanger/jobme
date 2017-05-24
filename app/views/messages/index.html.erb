@@ -1,3 +1,5 @@
+<%= render 'shared/navbar_profile' %>
+
 <div class="wrapper">
   <h1 class="text-center">Your conversation with <%= @destinator.first_name.capitalize%></h1>
   <div class="container">
@@ -26,9 +28,9 @@
                 <%= f.button :submit %>
               </div>
             <% end %>
-            <%= link_to 'Back to your request', job_request_path(@job, @request), class:'btn-jobme' %>
-            <%= link_to 'Back to your research', jobs_path(category: @job.category, city: @job.city) ,class:'btn-jobme' %>
-            <%= link_to 'Back to your conversations', messages_conversations_path,class:'btn-jobme' %>
+            <%= link_to 'Back to your request', job_request_path(@job, @request), class: 'btn-jobme' %>
+            <%= link_to 'Back to your research', jobs_path(category: @job.category, city: @job.city) ,class: 'btn-jobme' %>
+            <%= link_to 'Back to your conversations', messages_conversations_path,class: 'btn-jobme' %>
         </div>
       </div>
     </div>

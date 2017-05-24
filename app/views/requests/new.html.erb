@@ -1,29 +1,33 @@
-<%= link_to job_path(@job), class: "default-link" do %>
-    <%= icon('arrow-left') %> Back
-<% end %>
-
-<div class="card-confirmation">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="title">
-        <h2>When do you need <%= @job.user.first_name %> to help you?</h2>
-      </div>
-
-      <div class="description">
-        <%= simple_form_for([@job, @request]) do |f| %>
-          <%= f.error_notification %>
-
-          <div class="form-inputs">
-            <%= f.input :start_at %>
-            <%= f.input :end_at %>
-          </div>
-      </div>
-
-      <div class="form-actions">
-        <div class="btn-at-right">
-          <%= f.button :submit, class: 'btn-jobme text-center' %>
-        </div>
-      </div>
+<div class="container">
+  <div class="margin-for-navbar">
+    <%= link_to job_path(@job), class: "default-link" do %>
+        <%= icon('arrow-left') %> Back
     <% end %>
+
+    <div class="card-confirmation">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="title">
+            <h2>When do you need <%= @job.user.first_name %> to help you?</h2>
+          </div>
+
+          <div class="description">
+            <%= simple_form_for([@job, @request]) do |f| %>
+              <%= f.error_notification %>
+
+              <div class="form-inputs">
+                <%= f.input :start_at %>
+                <%= f.input :end_at %>
+              </div>
+          </div>
+
+          <div class="form-actions">
+            <div class="btn-at-right">
+              <%= f.button :submit, class: 'btn-jobme text-center' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

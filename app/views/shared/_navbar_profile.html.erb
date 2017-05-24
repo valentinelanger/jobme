@@ -1,0 +1,12 @@
+<div class="navbar-profile">
+
+
+  <% if user_signed_in? %>
+    <div class="navbar-right-links text-center">
+      <%= link_to 'Settings', user_path(current_user), class: " navbar-jobme-button text-center" %>
+      <%= link_to 'Inbox', messages_conversations_path, class: " navbar-jobme-button text-center" %>
+      <%= link_to 'Appointments with professional', users_requests_path, class: " navbar-jobme-button text-center" %>
+
+    </div>
+  <% end %>
+</div>

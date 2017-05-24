@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'messages/conversations'
+  get 'users/requests'
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
@@ -18,3 +19,4 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 end
+

@@ -1,0 +1,28 @@
+<%= render 'shared/navbar_profile' %>
+
+<div class="wrapper margin-for-navbar">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+        <div class="conversations-list">
+          <% @requests.each do |request| %>
+            <div class="row">
+            <div class="col-sm-6">
+            <ul>
+              <li>Activity: <%= request.job.category %></li>
+              <li>Professional requested: <%= request.destinator.first_name %> <%= request.destinator.last_name %></li>
+              <li>From: <%= request.start_at %> - To: <%= request.end_at %></li>
+            </ul>
+            </div>
+
+            <div class="col-sm-6">
+            <%= link_to "Update your request", job_request_path(request.job, request), class: 'btn-jobme-default request-links' %>
+            <%= link_to 'Delete your request', job_request_path(request.job, request), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-jobme-default request-links' %>
+            </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

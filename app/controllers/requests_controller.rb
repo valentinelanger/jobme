@@ -14,6 +14,9 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     @job = Job.find(params[:job_id])
     @request.job = @job
+
+    binding.pry
+
     @request.creator = current_user
     @request.destinator = @job.user
     if @request.save

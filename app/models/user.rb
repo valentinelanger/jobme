@@ -5,9 +5,9 @@ class User < ApplicationRecord
   has_many :sent_reviews, class_name: 'Review', foreign_key: 'creator_id'
   has_many :received_messages, class_name: 'Message', foreign_key: 'destinator_id'
   has_many :sent_messages, class_name: 'Message', foreign_key: 'creator_id'
-  has_many :requests
   has_many :jobs
-  has_many :received_requests, class_name: 'Request', through: :jobs
+  has_many :received_requests, class_name: 'Request', foreign_key: 'destinator_id'
+  has_many :sent_requests, class_name: 'Request', foreign_key: 'creator_id'
 
   validates :sexe, inclusion: { in: ['man', 'woman'], allow_nil: false }
   validates :first_name, presence: true
@@ -21,6 +21,9 @@ class User < ApplicationRecord
     'female' => 'woman'
   }
 
+  def requests
+    Request.where('creator_id = ? OR destinator_id = ?', id, id)
+  end
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)

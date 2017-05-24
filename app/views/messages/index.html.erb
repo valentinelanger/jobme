@@ -2,13 +2,21 @@
   <h1 class="text-center">Your conversation with <%= @destinator.first_name.capitalize%></h1>
   <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
           <div class="messages-conversation">
-            <% @request.messages.each do |message| %>
-              <div class="sender">
-                <p><%= message.content %></p>
-              </div>
-            <% end %>
+            <div class="messages-sent">
+              <% @request.messages.each do |message| %>
+                <% if message.creator == current_user %>
+                  <div class="sender">
+                    <p><%= message.content %></p>
+                  </div>
+                <% else %>
+                  <div class="receiver">
+                    <p><%= message.content %></p>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
             <%= simple_form_for([@job, @request, @message]) do |f| %>
               <%= f.error_notification %>
               <div class="form-inputs">
@@ -20,6 +28,7 @@
             <% end %>
             <%= link_to 'Back to your request', job_request_path(@job, @request), class:'btn-jobme' %>
             <%= link_to 'Back to your research', jobs_path(category: @job.category, city: @job.city) ,class:'btn-jobme' %>
+            <%= link_to 'Back to your conversations', messages_conversations_path,class:'btn-jobme' %>
         </div>
       </div>
     </div>

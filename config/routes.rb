@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  mount Attachinary::Engine => "/attachinary"
+
   get 'messages/conversations'
   get 'users/requests'
 

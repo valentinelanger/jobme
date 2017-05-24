@@ -1,9 +1,74 @@
-
 <div class="container">
+  <!-- Title - brand -->
   <div class="row title-home">
     <h1> <span>Jobme</span> Help yourself. Help your home.</h1>
     <h5>Find a reliable professional to help you with your home improvements.</h5>
   </div>
 
+  <!-- Search form -->
   <%= render 'shared/search' %>
 </div>
+
+<!-- Features code -->
+<div class="wrapper">
+  <h5 class="explanation-title">Our mission:</h5>
+  <div class="icons">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-icon">
+          <div class="row">
+            <div class="col-xs-3">
+              <div class="icon-detail">
+                <%= image_tag "fast1.png", class: "img-icon" %>
+              </div>
+            </div>
+            <div class="col-xs-9">
+              <div class="explanation-text">
+              <h3>Fast and direct</h3>
+              <p>You don't have to post any announce, just choose the professional you want to contact, and it's free !</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-icon">
+          <div class="row">
+            <div class="col-xs-3">
+              <div class="icon-detail">
+                <%= image_tag "reliable1.png", class: "img-icon"%>
+              </div>
+            </div>
+            <div class="col-xs-9">
+              <div class="explanation-text">
+                <h3>Safe and reliable professionnals</h3>
+                <p>Our professsionals are certified and respect French laws. Don't legal issues anymore!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-icon">
+          <div class="row">
+            <div class="col-xs-3">
+              <div class="icon-detail">
+                <%= image_tag "lover1.png", class: "img-icon" %>
+              </div>
+            </div>
+            <div class="col-xs-9">
+              <div class="explanation-text">
+                <h3>Only the best for a loving experience</h3>
+                <p>Jobme is based on reputation. At the end of every mission, you validate the paiement of the professional and you left a review as well as a comment</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Our professionals recommended -->
+

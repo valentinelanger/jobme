@@ -10,3 +10,50 @@ h1 span {
   .title-home {
     padding: 90px 65px 45px 65px;
   }
+
+.pages.home {
+  .explanation-title {
+    padding: 25px;
+  }
+
+  .wrapper {
+    margin-top: 170px;
+    background-color: #fafafa;
+  }
+  .img-icon:first-child {
+    width: 80px;
+    height: 80px;
+    opacity: 0.6;
+  }
+  .img-icon {
+    width: 100px;
+    height: 100px;
+    opacity: 0.6;
+  }
+  .icons {
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-icon:first-child {
+    margin-left: 25px;
+  }
+  .card-icon:last-child {
+    margin-right: 25px;
+  }
+  .card-icon {
+    margin: 10px;
+  }
+  .icon-detail {
+    width: 100px;
+    height: 100px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .explanation-text {
+    text-align: left;
+  }
+}

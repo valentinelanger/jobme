@@ -15,8 +15,11 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
-
+    <div class="height-page">
       <%= yield %>
+    </div>
+
+    <%= render 'shared/footer' %>
 
     <%= javascript_include_tag 'application' %>
   </body>

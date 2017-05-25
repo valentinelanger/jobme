@@ -35,7 +35,7 @@
           </div>
 
           <div class="col-xs-12 col-sm-6">
-            <div class="pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= image_path(@job.user.photo || @job.user.facebook_picture_url) %>');">
+            <div class="pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @job.user.picture.path %>');">
             </div>
           </div>
 
@@ -63,7 +63,7 @@
         <div class="index-show-review-card">
           <% @job.reviews.each do |review| %>
                 <div class="creator-info">
-                <%= image_tag image_path(review.creator.photo), class: "avatar-large" %>
+                <%= cl_image_tag review.creator.picture.path, class: "avatar-large" %>
                   <h4><%= review.creator.first_name%></h4>
                   <h4>Rating: <%= review.rating %>/5</h4>
                 </div>

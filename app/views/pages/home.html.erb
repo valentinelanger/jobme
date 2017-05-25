@@ -79,7 +79,7 @@
         <div class="card-jobs-index" >
           <%= link_to '', job, class: 'card-link' %>
           <div class="part-photo-of-card">
-            <div class="user-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= image_path(job.user.facebook_picture_url || job.user.photo) %>');">
+            <div class="user-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path job.user.picture.path %>');">
             </div>
             <h2><%= "#{job.user.first_name.capitalize} #{job.user.last_name.capitalize}" %></h2>
           </div>
@@ -106,37 +106,3 @@
     <% end %>
   </div>
 </div>
-
-<!--
-<div class="container">
-  <h3 class="recommended-professionals">Our recommended professionnals! </h3>
-    <div class="row">
-      <% @jobs.each do |job| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card-jobs-index" >
-            <%= link_to '', job, class:'card-link' %>
-            <div class="user-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= image_path(job.user.facebook_picture_url || job.user.photo) %>');">
-              <h2><%= "#{job.user.first_name.capitalize} #{job.user.last_name.capitalize}" %></h2>
-              <h3><%= "#{job.category.capitalize} in #{job.city.capitalize}"%></h3>
-            </div>
-            <div class="card-jobs-description">
-              <div class="job-title-rating">
-                <h2><%=job.title.capitalize%></h2>
-                <div class="rating text-inline">
-                  <p class="fa fa-star color"></p>
-                  <p class="fa fa-star color"></p>
-                  <p class="fa fa-star color"></p>
-                  <p class="fa fa-star"></p>
-                  <p class="fa fa-star"></p>
-                </div>
-              </div>
-              <div class="job-description">
-                <p><%=truncate(job.description.capitalize, length: 110)%></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-</div>
- -->

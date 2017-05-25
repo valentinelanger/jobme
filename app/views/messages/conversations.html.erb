@@ -18,7 +18,7 @@
                   <% else %>
                     <% @interlocuteur = message.creator %>
                   <% end %>
-                  <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= image_path(@interlocuteur.facebook_picture_url) %>');"></div>
+                  <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @interlocuteur.picture.path %>');"></div>
                   <h4><%= @interlocuteur.first_name%></h4>
                 </div>
 

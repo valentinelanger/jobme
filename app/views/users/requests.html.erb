@@ -2,23 +2,29 @@
 
 <div class="wrapper margin-for-navbar">
   <div class="container">
+  <h2 class="requests-title">Your requests</h2>
+  <hr>
     <div class="row">
       <div class="col-xs-12 col-sm-offset-2 col-sm-8">
         <div class="conversations-list">
           <% @requests.each do |request| %>
+          <div class="request-content">
             <div class="row">
-            <div class="col-sm-6">
-            <ul>
-              <li>Activity: <%= request.job.category %></li>
-              <li>Professional requested: <%= request.destinator.first_name %> <%= request.destinator.last_name %></li>
-              <li>From: <%= request.start_at %> - To: <%= request.end_at %></li>
-            </ul>
-            </div>
-
-            <div class="col-sm-6">
-            <%= link_to "Update your request", job_request_path(request.job, request), class: 'btn-jobme-default request-links' %>
-            <%= link_to 'Delete your request', job_request_path(request.job, request), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-jobme-default request-links' %>
-            </div>
+                <div class="col-sm-2 col-sm-offset-1">
+                  <div class="avatar-large avat-pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path(request.destinator.picture.path, :gravity => :face) %>');">
+                  </div>
+                </div>
+                <div class="col-sm-5">
+                    <p><%= request.destinator.first_name %> <%= request.destinator.last_name %></p>
+                    <p>Activity: <%= request.job.category.capitalize %></p>
+                    <p>From: <%= request.start_at %></p>
+                    <p>To: <%= request.end_at %></p>
+                </div>
+                <div class="col-sm-3">
+                  <%= link_to "Update your request", job_request_path(request.job, request), class: 'btn-jobme-default request-links' %>
+                  <%= link_to 'Delete your request', job_request_path(request.job, request), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-jobme-default request-links' %>
+                </div>
+              </div>
             </div>
           <% end %>
         </div>
@@ -26,3 +32,4 @@
     </div>
   </div>
 </div>
+

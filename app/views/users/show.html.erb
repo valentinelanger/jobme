@@ -1,28 +1,22 @@
 <%= render 'shared/navbar_profile' %>
-
-
 <div class="card-user">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <div class="center">
-        <div class="picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @user.picture.path %>');">
+  <h2>Your profile account</h2>
+  <hr>
+    <div class="row">
+      <div class="col-xs-12 col-sm-5">
+        <div class="center">
+          <div class="picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @user.picture.path %>');">
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-      <h2>Your profile account</h2>
-
-      <h5>Name:</h5>
-      <ul>
-        <li><%= @user.first_name %></li>
-        <li><%= @user.last_name %></li>
-      </ul>
-
-      <h5>Gender:</h5>
-      <%= @user.sexe %>
-      <%= link_to 'Edit your profile', users_profile_edit_path, class: 'btn-jobme-default' %>
+      <div class="col-xs-12 col-sm-6">
+      <h3><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></h3>
+      <hr>
+      <br>
+      <h4 class="fa fa-envelope"><%="  #{@user.email}" %></h4>
+      <div class="btn-at-right">
+        <%= link_to 'Edit your profile', users_profile_edit_path, class: 'btn-jobme' %>
+      </div>
     </div>
   </div>
-
 </div>

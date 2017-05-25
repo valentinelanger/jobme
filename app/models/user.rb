@@ -25,6 +25,10 @@ class User < ApplicationRecord
     Request.where('creator_id = ? OR destinator_id = ?', id, id)
   end
 
+  def reviews
+    Review.where('creator_id = ? OR destinator_id = ?', id, id)
+  end
+
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)

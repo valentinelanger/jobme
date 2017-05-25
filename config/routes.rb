@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'messages/conversations'
   get 'users/requests'
+  get 'users/profile_edit'
+  put 'users/profile_update'
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

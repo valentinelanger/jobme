@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <div class="center">
-        <div class="picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= @user.facebook_picture_url %>');">
+        <div class="picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path current_user.picture.path %>');">
         </div>
       </div>
     </div>
@@ -21,6 +21,7 @@
 
       <h5>Gender:</h5>
       <%= @user.sexe %>
+      <%= link_to 'Edit your profile', users_profile_edit_path, class: 'btn-jobme-default' %>
     </div>
   </div>
 

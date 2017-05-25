@@ -32,7 +32,6 @@
   }
 }
 
-
 .color {
   color: $green !important;
 }
@@ -70,27 +69,11 @@
   box-shadow: 0 1px 1px rgba(0,0,0,0.6);
   margin-top: 20px;
 
-
-
-
-
-
-
-    .rating {
-      position: absolute;
-      top: 45px;
-      right: 35px;
-
-
-
-    }
-
-    .job-reservation {
-      text-align: right;
-    }
-  }
+.rating {
+  position: absolute;
+  top: 45px;
+  right: 35px;
 }
-
 
 .index-show-bottom-card {
 

@@ -26,11 +26,17 @@
               <h2 class="job-title"><%=job.title.capitalize%></h2>
 
               <div class="rating text-inline">
-                <p class="fa fa-star color"></p>
-                <p class="fa fa-star color"></p>
-                <p class="fa fa-star color"></p>
-                <p class="fa fa-star"></p>
-                <p class="fa fa-star"></p>
+                <% @avg_rating = Review.average_rating(job) %>
+                <% if @avg_rating.nil? %>
+                  <p> No review yet </p>
+                <% else %>
+                  <% @avg_rating.times do %>
+                    <p class="fa fa-star color"></p>
+                  <% end %>
+                  <% (5 - @avg_rating).times do %>
+                    <p class="fa fa-star"></p>
+                  <% end %>
+                <% end %>
               </div>
             </div>
 

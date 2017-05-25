@@ -30,11 +30,17 @@
                   <div class="row">
                     <div class="col-xs-6">
                       <div class="rating text-inline">
-                        <p class="star color"> <%= icon('star') %></p>
-                        <p class="star color"> <%= icon('star') %></p>
-                        <p class="star color"> <%= icon('star') %></p>
-                        <p class="star"><%= icon('star') %></p>
-                        <p class="star"><%= icon('star') %></p>
+                        <% @avg_rating = Review.average_rating(@job) %>
+                        <% if @avg_rating.nil? %>
+                          <p> No review yet </p>
+                        <% else %>
+                          <% @avg_rating.times do %>
+                            <p class="stared color"><%= icon('star') %></p>
+                          <% end %>
+                          <% (5 - @avg_rating).times do %>
+                            <p class="stared"><%= icon('star') %></p>
+                          <% end %>
+                        <% end %>
                       </div>
                     </div>
                     <div class="col-xs-6">

@@ -1,6 +1,4 @@
 /* FOR VIEW JOBS#SHOW - quand on clique sur une carte affichee dans index */
-
-
 .show-job-card {
   .main-info {
     position: relative;
@@ -11,11 +9,16 @@
       font-weight: bolder;
     }
   .desc {
-    font-size: 15px;
-    font-weight: lighter;
-    padding: 72px 0px;
+    font-size: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0px;
     border-bottom: 1px solid #DBDBDB !important;
     border-top: 1px solid #DBDBDB !important;
+    p {
+      padding: 15px 0px;
+    }
   }
 }
 

@@ -6,6 +6,8 @@
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2">
           <div class="conversations-list">
+
+
             <% @conversations.each do |message| %>
 
               <div class="conversation-card">
@@ -13,13 +15,16 @@
                 <%= link_to '', job_request_messages_path(message.job, message.request), class: 'card-link' %>
 
                 <div class="interlocuteur-info">
-                  <% if message.creator == @user %>
-                    <% @interlocuteur = message.destinator %>
+                  <% if message.request.creator == @user %>
+                    <% @interlocutor = message.request.destinator %>
                   <% else %>
-                    <% @interlocuteur = message.creator %>
+                    <% @interlocutor = message.request.creator %>
                   <% end %>
-                  <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @interlocuteur.picture.path %>');"></div>
-                  <h4><%= @interlocuteur.first_name%></h4>
+
+                  <div class="avatar-large avat-pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path(@interlocutor.picture.path, :gravity => :face) %>');"></div>
+
+                  <h4><%= @interlocutor.first_name %></h4>
+
                 </div>
 
                 <div class="last-message">

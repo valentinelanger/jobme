@@ -13,7 +13,6 @@ Request.destroy_all
 Job.destroy_all
 User.destroy_all
 
-
 puts "creating all data..."
 
 url_leo = "http://static1.puretrend.com/articles/5/14/98/15/@/1643505-si-leonardo-dicaprio-songe-a-fonder-une-950x0-8.jpg"
@@ -29,7 +28,7 @@ puts "Saving picture to cloudinary.... "
 user_leo.picture_url = url_leo
 puts "Picture saved"
 
-url_gui = "https://avatars2.githubusercontent.com/u/11319064?v=3&s=400"
+url_gui = "https://images-na.ssl-images-amazon.com/images/M/MV5BODc4NDI1NzY5M15BMl5BanBnXkFtZTgwMTI1NTkyMTE@._V1_UX214_CR0,0,214,317_AL_.jpg"
 user_gui = User.new(
   email: 'guillaume@norris.god',
   password: 'password',
@@ -38,9 +37,11 @@ user_gui = User.new(
   sexe: 'man'
 )
 user_gui.save!
+puts "Saving picture to cloudinary.... "
 user_gui.picture_url = url_gui
+puts "Picture saved"
 
-url_vane = "https://avatars1.githubusercontent.com/u/26540604?v=3&s=400"
+url_vane = "http://femme-maison.com/fm/wp-content/uploads/2016/05/Shooting-SS16-2015Q3-Image-4712-F39L-Interpol.jpg"
 user_vane = User.new(
   email: 'vanessa@norris.god',
   password: 'password',
@@ -48,12 +49,12 @@ user_vane = User.new(
   last_name: 'Norris',
   sexe: 'woman'
 )
-user.vane.save!
+user_vane.save!
 puts "Saving picture to cloudinary.... "
-user.vane.picture_url = url_vane
+user_vane.picture_url = url_vane
 puts "Picture saved"
 
-url_mat = "https://avatars1.githubusercontent.com/u/26058829?v=3&s=400"
+url_mat = "https://pbs.twimg.com/profile_images/704803842190405635/EVYfBn8h.jpg"
 user_mat = User.new(
   email: 'matthieu@norris.god',
   password: 'password',
@@ -62,7 +63,9 @@ user_mat = User.new(
   sexe: 'man'
 )
 user_mat.save!
+puts "Saving picture to cloudinary.... "
 user_mat.picture_url = url_mat
+puts "Picture saved"
 
 puts "Users created ! Creating all jobs.... "
 

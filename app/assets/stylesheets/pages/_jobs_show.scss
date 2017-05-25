@@ -1,7 +1,14 @@
 /* FOR VIEW JOBS#SHOW - quand on clique sur une carte affichee dans index */
+
+
 .show-job-card {
+  h2 {
+    color: $dark-gray;
+    font-weight: bolder;
+  }
+  p {
 
-
+  }
 }
 .pic {
   height: 320px;

@@ -1,5 +1,3 @@
-
-
 <div class="wrapper">
   <div class="margin-for-navbar">
     <div class="container">
@@ -9,13 +7,13 @@
 
           <div class="col-xs-12 col-sm-6">
             <div class="main-info">
-              <h2><%= "#{@user.first_name} #{@user.last_name}"%></h2>
+              <h2><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}"%></h2>
               <div class="desc">
-                <h4 class="fa fa-paint-brush"><%=" #{@category.capitalize}"  %></h4>
-                <br>
-                <h4 class="fa fa-map-marker"><%= " #{@city.capitalize}" %></h4>
-                <br>
-                <h4 class="fa fa-money"><%= " #{@job.price}€ de l'heure" %></h4>
+                <h4><%= icon('paint-brush') %> <%= @category.capitalize %></h4>
+                <p><%= icon('map-marker') %> <%= @city.capitalize %></p>
+                <p><%= icon('money') %> <%= " #{@job.price} € / heure" %></p>
+
+
               </div>
               <div class="rating text-inline">
                 <p class="fa fa-star color"></p>

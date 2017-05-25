@@ -3,42 +3,50 @@
     <div class="container">
       <div class="show-job-card">
 
-        <div class="row">
+        <div class="show-picture-main-info-card">
+          <div class="row">
 
-          <div class="col-xs-12 col-sm-6">
 
-            <div class="main-info">
-              <h2><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}"%></h2>
+            <div class="col-xs-12 col-sm-6">
+              <div class="main-info">
+                <h2><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}"%></h2>
 
-              <div class="desc">
-                <h4><%= icon('paint-brush') %> <%= @category.capitalize %></h4>
-                <p><%= icon('map-marker') %> <%= @city.capitalize %></p>
-                <p><%= icon('money') %> <%= " #{@job.price} € / heure" %></p>
-              </div>
+                <div class="desc">
+                  <p><%= icon('paint-brush') %> <%= @category.capitalize %></p>
+                  <p><%= icon('map-marker') %> <%= @city.capitalize %></p>
+                  <p><%= icon('money') %> <%= " #{@job.price} € / heure" %></p>
+                </div>
 
-              <div class="rating text-inline">
-                <p class="fa fa-star color"></p>
-                <p class="fa fa-star color"></p>
-                <p class="fa fa-star color"></p>
-                <p class="fa fa-star"></p>
-                <p class="fa fa-star"></p>
-              </div>
+                <div class="job-reservation">
 
-              <div class="job-reservation">
-                <br>
-                <br>
-                <br>
-                <%= link_to "Prenez rendez-vous avec #{@user.first_name}!", new_job_request_path(@job), class:'btn-jobme' %>
-                <!-- <button class="btn-jobme">Prenez rendez-vous avec <%=@user.first_name%>!</button> -->
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-xs-12 col-sm-6">
-            <div class="pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @job.user.picture.path %>');">
+            <div class="col-xs-12 col-sm-6">
+              <div class="picture-reviews-button">
+                <div class="pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @job.user.picture.path %>');">
+                </div>
+
+                <div class="col-xs-6">
+                  <div class="rating text-inline">
+                    <p class="fa fa-star color"></p>
+                    <p class="fa fa-star color"></p>
+                    <p class="fa fa-star color"></p>
+                    <p class="fa fa-star"></p>
+                    <p class="fa fa-star"></p>
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <%= link_to "Prenez rendez-vous avec #{@user.first_name}!", new_job_request_path(@job), class: 'btn-jobme' %>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
+
+
 
         <div class="index-show-bottom-card">
           <div class="row">
@@ -59,6 +67,8 @@
             </div>
           </div>
         </div>
+
+
         <div class="index-show-review-card">
           <% @job.reviews.each do |review| %>
                 <div class="creator-info">

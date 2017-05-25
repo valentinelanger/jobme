@@ -13,12 +13,19 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+<<<<<<< HEAD
     padding: 0px;
+=======
+
+>>>>>>> 17cc46733d67d31c7b88757c63226dc7d4b799d5
     border-bottom: 1px solid #DBDBDB !important;
     border-top: 1px solid #DBDBDB !important;
     p {
       padding: 15px 0px;
     }
+  }
+  .show-picture-main-info-card {
+    min-height: 320px;
   }
 }
 

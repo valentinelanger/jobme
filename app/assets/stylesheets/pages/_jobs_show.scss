@@ -2,14 +2,23 @@
 
 
 .show-job-card {
-  h2 {
-    color: $dark-gray;
-    font-weight: bolder;
-  }
-  p {
-
+  .main-info {
+    position: relative;
+    padding: 15px;
+    h2 {
+      margin: 0px 0px 22px 0px;
+      color: $dark-gray;
+      font-weight: bolder;
+    }
+  .desc {
+    font-size: 15px;
+    font-weight: lighter;
+    padding: 72px 0px;
+    border-bottom: 1px solid #DBDBDB !important;
+    border-top: 1px solid #DBDBDB !important;
   }
 }
+
 .pic {
   height: 320px;
   margin: 0px 0px 0px 60px;
@@ -29,19 +38,9 @@
 
 
 
-  .main-info {
-    position: relative;
-    padding: 15px;
 
-    h2 {
-      font-weight: lighter;
-      font-size: 25px;
-    }
 
-    .desc .fa {
-      font-size: 15px;
-      font-weight: lighter;
-    }
+
 
     .rating {
       position: absolute;

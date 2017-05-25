@@ -39,7 +39,6 @@ class User < ApplicationRecord
 
     if user
       user.update(user_params)
-      user.picture_url = auth.info.image.to_s
     else
       user = User.new(user_params)
       user.picture_url = auth.info.image.to_s

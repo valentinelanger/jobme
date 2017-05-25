@@ -49,18 +49,21 @@
       position: absolute;
       top: 45px;
       right: 35px;
-
-      .color {
-        color: $green;
-      }
-
     }
+
+
+
+
 
     .job-reservation {
       text-align: right;
     }
   }
 }
+
+ .color {
+        color: $green;
+      }
 
 
 .index-show-bottom-card {

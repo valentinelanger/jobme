@@ -29,13 +29,17 @@
                 </div>
 
                 <div class="col-xs-6">
-                  <div class="rating text-inline">
-                    <p class="fa fa-star color"></p>
-                    <p class="fa fa-star color"></p>
-                    <p class="fa fa-star color"></p>
-                    <p class="fa fa-star"></p>
-                    <p class="fa fa-star"></p>
-                  </div>
+                  <% @avg_rating = Review.average_rating(@job) %>
+                  <% if @avg_rating.nil? %>
+                    <p> No review yet </p>
+                  <% else %>
+                    <% @avg_rating.times do %>
+                      <p class="fa fa-star color"></p>
+                    <% end %>
+                    <% (5 - @avg_rating).times do %>
+                      <p class="fa fa-star"></p>
+                    <% end %>
+                  <% end %>
                 </div>
                 <div class="col-xs-6">
                   <%= link_to "Prenez rendez-vous avec #{@user.first_name}!", new_job_request_path(@job), class: 'btn-jobme' %>

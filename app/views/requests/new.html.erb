@@ -8,26 +8,39 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="title">
-            <h2>When do you need <%= @job.user.first_name %> to help you?</h2>
+            <h2>When will you need <%= @job.user.first_name %> to help you?</h2>
           </div>
-
-          <div class="description">
-            <%= simple_form_for([@job, @request]) do |f| %>
-              <%= f.error_notification %>
-
-              <div class="form-inputs">
-                <%= f.input :start_at %>
-                <%= f.input :end_at %>
-              </div>
-          </div>
-
-          <div class="form-actions">
-            <div class="btn-at-right">
-              <%= f.button :submit, class: 'btn-jobme text-center' %>
+          <hr>
+        </div>
+        <div class="new-request-content">
+          <div class="col-xs-12 col-sm-5">
+            <div class="pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @job.user.picture.path %>');">
             </div>
           </div>
-        <% end %>
-      </div>
+          <div class="col-xs-8 col-sm-7">
+            <div class="description">
+              <%= simple_form_for([@job, @request]) do |f| %>
+                <%= f.error_notification %>
+
+                <div class="form-inputs">
+                  <%= f.input :start_at, label: "From" %>
+                  <%= f.input :end_at, label: "Until" %>
+                </div>
+            </div>
+            <div class="form-actions">
+              <div class="btn-at-right">
+                <%= f.button :submit, "Send your request", class: 'btn-jobme text-center' %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+
+
+
+
     </div>
+  </div>
+  <div class="margin-for-footer">
   </div>
 </div>

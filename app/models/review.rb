@@ -7,4 +7,14 @@ class Review < ApplicationRecord
   validates :creator, presence: true
   validates :destinator, presence: true
   validates :job_id, presence: true
+
+  def self.average_rating(job)
+    @reviews = job.reviews
+    unless @reviews.size == 0
+      total = @reviews.reduce(0) do |total, review|
+        total += review.rating.to_f
+      end
+      (total / @reviews.size).round
+    end
+  end
 end

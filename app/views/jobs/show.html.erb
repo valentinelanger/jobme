@@ -4,8 +4,8 @@
       <div class="show-job-card">
 
         <div class="show-picture-main-info-card">
-          <div class="row">
 
+          <div class="row">
 
             <div class="col-xs-12 col-sm-6">
               <div class="main-info">
@@ -16,33 +16,39 @@
                   <p><%= icon('map-marker') %> <%= @city.capitalize %></p>
                   <p><%= icon('money') %> <%= " #{@job.price} € / heure" %></p>
                 </div>
-
-                <div class="job-reservation">
-
-                </div>
               </div>
             </div>
 
             <div class="col-xs-12 col-sm-6">
               <div class="picture-reviews-button">
-                <div class="pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @job.user.picture.path %>');">
+                <div class="row">
+                  <div class="pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @job.user.picture.path %>');">
+                  </div>
                 </div>
 
-                <div class="col-xs-6">
-                  <% @avg_rating = Review.average_rating(@job) %>
-                  <% if @avg_rating.nil? %>
-                    <p> No review yet </p>
-                  <% else %>
-                    <% @avg_rating.times do %>
-                      <p class="fa fa-star color"></p>
-                    <% end %>
-                    <% (5 - @avg_rating).times do %>
-                      <p class="fa fa-star"></p>
-                    <% end %>
-                  <% end %>
-                </div>
-                <div class="col-xs-6">
-                  <%= link_to "Prenez rendez-vous avec #{@user.first_name}!", new_job_request_path(@job), class: 'btn-jobme' %>
+                <div class="align-reviews-btn">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <div class="rating text-inline">
+                        <% @avg_rating = Review.average_rating(@job) %>
+                        <% if @avg_rating.nil? %>
+                          <p> No review yet </p>
+                        <% else %>
+                          <% @avg_rating.times do %>
+                            <p class="stared color"><%= icon('star') %></p>
+                          <% end %>
+                          <% (5 - @avg_rating).times do %>
+                            <p class="stared"><%= icon('star') %></p>
+                          <% end %>
+                        <% end %>
+                      </div>
+                    </div>
+                    <div class="col-xs-6">
+                      <div class="link-book">
+                        <%= link_to "Book now", new_job_request_path(@job), class: 'btn-jobme' %>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

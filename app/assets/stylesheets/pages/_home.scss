@@ -12,8 +12,15 @@ h1 span {
   }
 
 .pages.home {
+
+  .recommended-professionals {
+    margin: 100px 0px 30px 0px;
+  }
+
   .explanation-title {
-    padding: 25px;
+    padding: 50px 0px 0px 40px;
+    margin-bottom: 0px;
+    color: $pink;
   }
 
   .wrapper {
@@ -21,33 +28,32 @@ h1 span {
     background-color: #fafafa;
   }
   .img-icon:first-child {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     opacity: 0.6;
   }
   .img-icon {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     opacity: 0.6;
+    margin: 10px;
   }
   .icons {
-    padding: 10px 0px;
+    padding: 0px 0px 10px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .card-icon:first-child {
-    margin-left: 25px;
+    margin-left: 40px;
   }
   .card-icon:last-child {
-    margin-right: 25px;
+    margin-right: 40px;
   }
   .card-icon {
-    margin: 10px;
+    margin: 10px 10px 50px 10px;
   }
   .icon-detail {
-    width: 100px;
-    height: 100px;
     min-height: 150px;
     display: flex;
     align-items: center;

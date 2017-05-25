@@ -1,11 +1,15 @@
-.card-jobs-index {
-  border-radius: 5px;
-  // border: 1px solid $green;
-  position: relative;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  margin: 10px;
-  background-color: white;
+/* FOR VIEW INDEX DE JOBS - CARDS JOBS - quand recherche */
 
+/* border-bottom: 1px solid #DBDBDB !important; */
+
+.card-jobs-index {
+  border-radius: 3px;
+  position: relative;
+  margin: 15px 0px;
+  background-color: white;
+  &:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  }
   .card-link {
   position: absolute;
   top: 0;
@@ -17,25 +21,25 @@
   opacity: 0;
   }
   .card-link:hover{
-    opacity: 0.1;
+    opacity: 0.03;
   }
+  .part-photo-of-card {
+    position: relative;
 
+    h2 {
+      margin: 0px;
+      position: absolute;
+      bottom: 15px;
+      left: 20px;
+      font-weight: lighter;
+      font-size: 20px;
+      color: white;
+    }
+  }
   .user-image {
     background-size: cover;
     background-position: center;
-    color: white;
     height: 320px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-
-    h2 {
-      margin-top: 0px;
-      position: absolute;
-      top:10px;
-      left:10px;
-      font-weight: lighter;
-      font-size: 20px;
-    }
 
     h3 {
       margin-top: 0px;
@@ -46,39 +50,40 @@
       font-size: 15px;
     }
   }
-
   .card-jobs-description {
     padding: 10px;
-
-
     h2 {
       margin-top: 0px;
       // font-weight: lighter;
       font-size: 18px;
-      color: $green;
+      color: $dark-gray;
     }
-
-    p {
-      font-weight: lighter;
-      font-size: 12px;
-    }
-
-    .job-title-rating {
+    .job-category-city {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-
-      .fa-star.color {
-        color: $green;
+      p {
+        font-size: 18px;
+        color: $dark-gray;
+      }
+      .job-category {
+        color: $light-gray;
+        opacity: 0.8;
+        font-size: 18px;
+        // font-weight: bolder;
+        text-transform: uppercase;
       }
     }
-
-    .job-description {
-      flex: 1 0 auto;
+    .job-title {
+      margin-top: 18px;
+      font-size: 20px;
+    }
+    .fa-star.color {
+      color: $green;
     }
   }
 }
 
+/* FOR VIEW SHOW OF USER - sous onglet profile dans navbar profile */
 .card-user {
   background-color: white !important;
   margin: 30px 60px;
@@ -89,6 +94,7 @@
   }
 }
 
+/* FOR VIEWS requests/new.html.erb & requests/show.html.erb - sous onglet appointments dans navbar profile */
 .card-confirmation {
   position: relative;
   background-color: white !important;

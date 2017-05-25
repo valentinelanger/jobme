@@ -6,12 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "destroying all data..."
 Message.destroy_all
 Review.destroy_all
 Request.destroy_all
 Job.destroy_all
 User.destroy_all
 
+
+puts "creating all data..."
 user = User.create!(
   email: 'arthur@norris.god',
   password: 'password',
@@ -42,9 +45,9 @@ user2 = User.create!(
 job = Job.create!(
   user: user,
   category: 'electrician',
-  description: "je suis hyper fort et j'adore les cables electriques",
+  description: "10 ans d'expériences, employé EDF pendant 5 ans - Directeur de chantier - je suis hyper fort et j'adore les cables electriques",
   city: 'Paris',
-  title: "Moi c'est Arthur",
+  title: "Travail de qualité",
   price: 12
 )
 
@@ -140,3 +143,5 @@ Review.create!(
   content: "My children can't talk about anything but Auvergne and cheese!!",
   rating: 1
   )
+
+puts "Finished !"

@@ -1,4 +1,14 @@
-.wrapper > h1 {
-  font-weight: lighter;
-  margin: 35px;
+.jobs.index {
+  background-color: white;
+
+  .index-title {
+    margin: 100px 0px 40px 0px;
+    font-weight: bolder;
+    color: $dark-gray;
+  }
+
+  .wrapper > h1 {
+    font-weight: lighter;
+    margin: 35px;
+  }
 }

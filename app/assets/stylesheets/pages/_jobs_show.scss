@@ -1,35 +1,46 @@
+/* FOR VIEW JOBS#SHOW - quand on clique sur une carte affichee dans index */
+
+
+.show-job-card {
+  .main-info {
+    position: relative;
+    padding: 15px;
+    h2 {
+      margin: 0px 0px 22px 0px;
+      color: $dark-gray;
+      font-weight: bolder;
+    }
+  .desc {
+    font-size: 15px;
+    font-weight: lighter;
+    padding: 72px 0px;
+    border-bottom: 1px solid #DBDBDB !important;
+    border-top: 1px solid #DBDBDB !important;
+  }
+}
+
+.pic {
+  height: 320px;
+  margin: 0px 0px 0px 60px;
+  background-size: cover;
+  background-position: center;
+}
+
 .fa-arrow-left {
   font-weight: lighter;
   font-color: $gray;
 }
 
-.index-show-top-card {
-  background-color: white;
+.index-show-card {
   border-radius: 5px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.6);
   margin-top: 20px;
 
-  .pic {
-    height: 320px;
-    background-size: cover;
-    background-position: center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
 
-  .main-info {
-    position: relative;
-    padding: 15px;
 
-    h2 {
-      font-weight: lighter;
-      font-size: 25px;
-    }
 
-    .desc .fa {
-      font-size: 15px;
-      font-weight: lighter;
-    }
+
+
 
     .rating {
       position: absolute;
@@ -52,7 +63,6 @@
 .index-show-bottom-card {
 
   .contact {
-    background-color: white;
     border-radius: 5px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.6);
     margin-top: 20px;
@@ -65,7 +75,7 @@
   }
 
   .job-description {
-    background-color: white;
+
     border-radius: 5px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.6);
     margin-top: 20px;
@@ -89,7 +99,7 @@
 
 .index-show-review-card {
   padding: 10px;
-  background-color: white;
+
   border-radius: 5px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.6);
   margin-top: 20px;

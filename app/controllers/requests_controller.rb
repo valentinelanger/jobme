@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: [:show, :destroy]
+  before_action :set_request, only: [:show, :destroy, :update, :edit]
 
   def show
     @job = Job.find(params[:job_id])
@@ -21,6 +21,17 @@ class RequestsController < ApplicationController
       redirect_to job_request_path(@job, @request), notice: 'Request was successfully created.'
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @request.update(request_params)
+      redirect_to job_request_path(@request.job, @request), notice: 'Request was successfully updated.'
+    else
+      render :edit
     end
   end
 

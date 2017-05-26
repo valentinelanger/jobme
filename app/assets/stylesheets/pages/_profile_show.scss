@@ -1,10 +1,4 @@
 
-.picture {
-  height: 200px;
-  width: 200px;
-  background-size: cover;
-  background-position: center;
-}
 
 .center {
   display: flex;
@@ -12,3 +6,26 @@
 }
 
 
+.card-user {
+  h2 {
+    font-size: 30px;
+  }
+  .picture {
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  background-position: center;
+  }
+  .btn-at-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 100px;
+    margin-right: 180px;
+  }
+}
+
+.profile-title {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #DBDBDB !important;
+}

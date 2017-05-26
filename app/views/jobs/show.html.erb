@@ -71,10 +71,13 @@
       </div>
 
 
-      <div class="index-show-review-card">
-        <% @job.reviews.each do |review| %>
+
+      <% @job.reviews.each do |review| %>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="index-show-review-card">
               <div class="creator-info">
-              <%= cl_image_tag review.creator.picture.path, class: "avatar-large" %>
+                <%= cl_image_tag review.creator.picture.path, class: "avatar-large" %>
                 <h4><%= review.creator.first_name%></h4>
                 <div class = "review-rating text-inline">
                   <% review.rating.times do %>
@@ -86,11 +89,14 @@
                 </div>
               </div>
               <div class="review-content">
-                  <h2><%= review.title %></h2>
-                  <h4><%= review.content %></h4>
+                <h2><%= review.title %></h2>
+                <h4><%= review.content %></h4>
               </div>
-        <% end %>
-      </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
 
 
       </div>

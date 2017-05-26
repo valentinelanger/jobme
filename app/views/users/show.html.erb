@@ -1,19 +1,26 @@
 <%= render 'shared/navbar_profile' %>
-<div class="card-user">
-  <h2>Your profile account</h2>
-    <div class="row">
-      <div class="col-xs-12 col-sm-5">
-        <div class="center">
-          <div class="picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @user.picture.path %>');">
+
+<div class="wrapper margin-for-navbar">
+  <div class="container">
+    <h2 class="profile-title">Your profile account</h2>
+    <div class="card-user">
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-5">
+          <div class="center">
+            <div class="picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @user.picture.path %>');">
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-      <h3><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></h3>
-      <br>
-      <h4 class="fa fa-envelope"><%="  #{@user.email}" %></h4>
-      <div class="btn-at-right">
-        <%= link_to 'Edit your profile', users_profile_edit_path, class: 'btn-jobme' %>
+
+        <div class="col-xs-12 col-sm-6">
+          <h3><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></h3>
+          <p><%= icon('envelope-open-o') %><%="  #{@user.email}" %></p>
+
+          <div class="btn-at-right">
+            <%= link_to 'Edit your profile', users_profile_edit_path, class: 'btn-jobme' %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

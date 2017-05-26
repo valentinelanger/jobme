@@ -1,16 +1,24 @@
-<%= simple_form_for @user,
-  :url => url_for(:action => 'profile_update', :controller => 'users'),
-  :method => 'put' do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :sexe, label: 'gender', collection: User::GENDERS %>
-    <%= f.input :picture, as: :attachinary %>
-  </div>
+<div class="row">
+  <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+    <div class="auth-card">
+      <h2>Edit your Profile</h2>
+      <%= simple_form_for @user,
+        :url => url_for(:action => 'profile_update', :controller => 'users'),
+        :method => 'put' do |f| %>
+        <%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+        <div class="form-inputs">
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :sexe, label: 'gender', collection: User::GENDERS %>
+          <%= f.input :picture, as: :attachinary %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, class: "btn-jobme" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

@@ -15,10 +15,12 @@ Rails.application.routes.draw do
 
   resources :jobs do
     resources :reviews, only: [:new, :create]
-    resources :requests, only: [:new, :create, :show, :update, :destroy] do
+    resources :requests, only: [:new, :create, :show, :destroy] do
       resources :messages, only: [:index, :new, :create]
     end
   end
+
+  resources :requests, only: [:edit, :update]
 
   root to: 'pages#home'
 end

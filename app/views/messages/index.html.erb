@@ -1,6 +1,6 @@
 <%= render 'shared/navbar_profile' %>
 
-<div class="wrapper">
+<div class="wrapper" data-request-id="<%= @request.id %>" data-job-id="<%= @job.id %>">
   <div class="large-container text-center">
     <div class="avatar-large avat-pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path(@interlocutor.picture.path, :gravity => :face) %>');"></div>
     <h1 class="text-center">Your conversation with <%= @interlocutor.first_name.capitalize%></h1>
@@ -24,6 +24,7 @@
                 <%= simple_form_for([@job, @request, @message]) do |f| %>
                   <%= f.error_notification %>
                   <div class="form-inputs">
+
                     <%= f.input :content, label: false %>
                   </div>
                   <div class="btn-at-right">

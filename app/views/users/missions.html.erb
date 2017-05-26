@@ -14,8 +14,8 @@
                   </div>
                 </div>
                 <div class="col-sm-5">
-                  <p><%= request.creator.first_name %> <%= request.creator.last_name %></p>
-                  <p>Activity: <%= request.job.category.capitalize %></p>
+                  <p><strong>Mission for</strong>: <%= request.creator.first_name %> <%= request.creator.last_name %></p>
+                  <p>You are going to do: <%= request.job.category.capitalize %></p>
                   <p>At: <%= request.start_at %></p>
                 </div>
                 <div class="col-sm-4">

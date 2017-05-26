@@ -31,3 +31,15 @@
 .height-page {
   min-height: 100vh;
 }
+
+.users.profile_edit {
+  background-color: #fafafa;
+  .auth-card {
+    position: relative;
+  }
+  .form-actions {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+}

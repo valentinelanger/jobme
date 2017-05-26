@@ -73,22 +73,22 @@
 
       <div class="index-show-review-card">
         <% @job.reviews.each do |review| %>
-              <div class="creator-info">
-              <%= cl_image_tag review.creator.picture.path, class: "avatar-large" %>
-                <h4><%= review.creator.first_name%></h4>
-                <div class = "review-rating text-inline">
-                  <% review.rating.times do %>
-                    <p class="stared color"><%= icon('star') %></p>
-                  <% end %>
-                  <% (5 - review.rating).times do %>
-                    <p class="stared"><%= icon('star') %></p>
-                  <% end %>
-                </div>
-              </div>
-              <div class="review-content">
-                  <h2><%= review.title %></h2>
-                  <h4><%= review.content %></h4>
-              </div>
+          <div class="creator-info">
+            <%= cl_image_tag review.creator.picture.path, class: "avatar-large" %>
+            <h4><%= review.creator.first_name%></h4>
+            <div class = "review-rating text-inline">
+              <% review.rating.times do %>
+                <p class="stared color"><%= icon('star') %></p>
+              <% end %>
+              <% (5 - review.rating).times do %>
+                <p class="stared"><%= icon('star') %></p>
+              <% end %>
+            </div>
+          </div>
+          <div class="review-content">
+            <h2><%= review.title %></h2>
+            <h4><%= review.content %></h4>
+          </div>
         <% end %>
       </div>
 

@@ -1,12 +1,28 @@
+
 .request-content {
-  border-radius: 5px;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.6);
   padding: 10px;
   margin: 10px;
 }
-
 .requests-title {
-  font-weight: lighter;
+  margin-top: 0px;
   font-size: 30px;
-  margin-bottom: 40px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #DBDBDB !important;
+}
+
+.btn-jobme-default2 {
+  margin: 10px 0px;
+}
+p span {
+  color: $dark-gray;
+  font-weight: bolder;
+}
+
+
+.picture-request {
+  height: 110px;
+  width: 140px;
+  background-size: cover;
+  background-position: center;
 }

@@ -3,42 +3,38 @@
     <%= link_to job_path(@job), class: "default-link" do %>
         <%= icon('arrow-left') %> Back
     <% end %>
-
     <div class="card-confirmation">
       <div class="row">
         <div class="col-xs-12">
           <div class="title">
             <h2>When will you need <%= @job.user.first_name %> to help you?</h2>
           </div>
-          <hr>
         </div>
+
         <div class="new-request-content">
           <div class="col-xs-12 col-sm-5">
-            <div class="pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @job.user.picture.path %>');">
+            <div class="part-picture">
+              <div class="pic" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @job.user.picture.path %>');">
+              </div>
             </div>
           </div>
+
           <div class="col-xs-8 col-sm-7">
             <div class="description">
               <%= simple_form_for([@job, @request]) do |f| %>
                 <%= f.error_notification %>
-
                 <div class="form-inputs">
-                  <%= f.input :start_at, label: "From" %>
-                  <%= f.input :end_at, label: "Until" %>
+                  <%= f.input :start_at, label: "Fro" %>
                 </div>
             </div>
             <div class="form-actions">
               <div class="btn-at-right">
-                <%= f.button :submit, "Send your request", class: 'btn-jobme text-center' %>
+                <%= f.button :submit, "Book now", class: 'btn-jobme text-center' %>
               </div>
             </div>
             <% end %>
           </div>
         </div>
-
-
-
-
     </div>
   </div>
   <div class="margin-for-footer">

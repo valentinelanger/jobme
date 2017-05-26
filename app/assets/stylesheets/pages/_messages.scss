@@ -1,3 +1,33 @@
+
+  .large-container {
+    padding: 30px;
+    border-top: 1px solid $pink;
+    border-bottom: 1px solid $pink;
+    background-color: #fafafa;
+
+    .avat-pic {
+      display: inline-block;
+      background-size: cover;
+    }
+
+
+    .avatar-large {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-weight: lighter;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      margin-left: 10px;
+      display: inline-block;
+    }
+  }
+
+
+
 .messages-conversation {
   background-color: white;
   border-radius: 5px;
@@ -32,5 +62,12 @@
         border: 1px solid $gray;
       }
     }
+  }
+
+    .btn-at-right {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+      margin-right: 20px;
   }
 }

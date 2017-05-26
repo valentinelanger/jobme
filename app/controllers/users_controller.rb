@@ -6,6 +6,20 @@ class UsersController < ApplicationController
 
   def requests
     @requests = current_user.requests
+    @appointments = []
+    @requests.each do |request|
+      @appointments << request if current_user == request.creator
+    end
+    return @appointments
+  end
+
+  def missions
+    @requests = current_user.requests
+    @missions = []
+    @requests.each do |request|
+      @missions << request if current_user == request.destinator
+    end
+    return @missions
   end
 
   def profile_edit

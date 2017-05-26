@@ -5,8 +5,14 @@
     <div class="navbar-right-links text-center">
       <%= link_to 'Settings', user_path(current_user), class: " navbar-jobme-button text-center" %>
       <%= link_to 'Inbox', messages_conversations_path, class: " navbar-jobme-button text-center" %>
-      <%= link_to 'Appointments with professional', users_requests_path, class: " navbar-jobme-button text-center" %>
+      <%= link_to 'Appointments', users_requests_path, class: " navbar-jobme-button text-center" %>
+      <% if current_user.jobs.present? %>
+        <%= link_to 'Missions', users_missions_path, class: " navbar-jobme-button text-center" %>
+      <% end %>
 
     </div>
   <% end %>
+
+
+
 </div>

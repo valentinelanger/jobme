@@ -12,6 +12,7 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
+    @request.end_at = @request.start_at + 2.hours
     @job = Job.find(params[:job_id])
     @request.job = @job
     @request.creator = current_user
@@ -25,7 +26,11 @@ class RequestsController < ApplicationController
 
   def destroy
     @request.destroy
-    redirect_to requests_url, notice: 'Request was successfully destroyed.'
+    if current_user == @request.destinator
+      redirect_to users_missions_path, notice: 'Mission was successfully destroyed.'
+    else
+      redirect_to users_requests_path, notice: 'Appointment was successfully destroyed.'
+    end
   end
 
   private
@@ -35,6 +40,6 @@ class RequestsController < ApplicationController
     end
 
     def request_params
-      params.require(:request).permit(:start_at, :end_at)
+      params.require(:request).permit(:start_at)
     end
 end

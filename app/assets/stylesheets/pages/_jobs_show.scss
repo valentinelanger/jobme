@@ -12,6 +12,7 @@
     }
   }
   .desc {
+    padding-top: 20px;
     font-size: 19px;
     display: flex;
     flex-direction: column;
@@ -25,44 +26,33 @@
   .show-picture-main-info-card {
     min-height: 350px;
   }
-  .star i {
-    font-size: 25px !important;
-  }
-  .fa {
-    font-size: 25px !important;
-  }
-}
-
-.color {
-  color: $green !important;
-}
-
-.align-reviews-btn {
-  margin-left: 60px !important;
-  .link-book {
-    padding: 15px 0px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .rating {
-    padding: 15px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-.pic {
+  .pic {
   height: 320px;
-  margin: 0px 0px 0px 60px;
   background-size: cover;
   background-position: center;
-}
-
-.fa-arrow-left {
-  font-weight: lighter;
-  font-color: $gray;
+  }
+  .align-reviews-btn {
+    .rating {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-left: 60px;
+      .stared {
+        padding: 0px 5px;
+        font-size: 22px;
+      }
+      .color {
+        color: $green !important;
+      }
+    }
+  }
+  .link-book {
+    display: flex;
+    justify-content: center;
+    .btn-jobme {
+      min-width: 150px;
+    }
+  }
 }
 
 .index-show-card {
@@ -71,82 +61,59 @@
   margin-top: 20px;
 }
 
-.rating {
-  position: absolute;
-  top: 45px;
-  right: 35px;
-}
-
 .index-show-bottom-card {
-
+  border-bottom: 1px solid #DBDBDB !important;
+  margin: 0px 0px;
   .contact {
-    border-radius: 5px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.6);
-    margin-top: 20px;
-    // margin-right: 10px;
-    padding: 10px;
+    font-size: 22px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
-    h4 {
-      font-weight: lighter;
+    padding-bottom: 41px;
+    .contact-item {
+      padding: 0px 30px;
+      font-size: 22px;
     }
   }
-
   .job-description {
-
-    border-radius: 5px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.6);
-    margin-top: 20px;
-    padding: 10px;
-
-
     h2 {
-      font-weight: lighter;
       margin-top: 0px;
+      margin-bottom: 25px;
       font-size: 25px;
-      color: $green;
+      color: $dark-gray;
     }
-
     h4 {
-      font-size: 15px;
-      font-weight: lighter;
+      font-size: 19px;
+      margin-bottom: 50px;
     }
-
   }
 }
 
 .index-show-review-card {
   padding: 10px;
-
-  border-radius: 5px;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.6);
-  margin-top: 20px;
+  margin: 30px 0px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
-
   h2 {
-    font-weight: lighter;
     font-size: 25px;
-    color: $green;
+    color: $dark-gray;
+    margin-bottom: 25px;
   }
-
   h4 {
-    font-weight: lighter;
-    font-size: 20px;
+    font-size: 19px;
   }
-
   .creator-info {
     margin-left: 50px;
     margin-right: 90px;
-
   }
-
   .review-content {
+    margin-left: 30px;
     flex-grow: 1;
     text-align: left;
-
   }
-
   .review-rating p {
     display: inline-block;
   }

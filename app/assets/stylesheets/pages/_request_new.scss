@@ -1,42 +1,42 @@
-.margin-for-footer {
-  margin-top: 50px;
-}
-
-.title {
-  h2 {
+.requests.new {
+  .title {
+    border-bottom: 1px solid #DBDBDB !important;
+    h2 {
     margin-top: 10px;
-    font-weight: lighter;
     font-size: 30px;
     margin-bottom: 50px;
-  }
-}
-
-.new-request-content {
-  padding-top: 100px;
-
-    .pic {
-      height: 290px;
-      width: 260px;
-      margin: 0px 0px 0px 60px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 5px;
     }
-
+  }
+  .pic {
+    min-height: 290px;
+    margin: 50px 0px 0px 60px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+  }
   .description {
-
-    abbr {
-      display: none;
-    }
+    margin-top: 20px;
   }
-
   .btn-at-right {
     display: flex;
     justify-content: flex-end;
     margin-top: 100px;
     margin-right: 180px;
+    .btn-jobme {
+      min-width: 150px;
+    }
   }
-
+  .form-inputs {
+    margin-top: 50px;
+  }
+  .margin-for-footer {
+  margin-top: 50px;
+  }
 }
+
+
+
+
+
 
 

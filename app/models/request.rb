@@ -1,6 +1,6 @@
 class Request < ApplicationRecord
   belongs_to :job
-  has_many :messages
+  has_many :messages, dependent: :destroy
   belongs_to :destinator, class_name: 'User'
   belongs_to :creator, class_name: 'User'
 

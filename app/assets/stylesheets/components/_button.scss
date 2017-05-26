@@ -15,17 +15,18 @@
 }
 
 .btn-jobme-default {
-  color: $light-green;
+  color: $gray;
   padding: 10px 15px;
   border-radius: 50px;
   border: none;
   &:hover {
-  color: $green;
+  color: $dark-gray;
   text-decoration: none;
   }
 }
 
 .btn-jobme-default2 {
+  background-color: transparent;
   color: $gray;
   padding: 10px 15px;
   border-radius: 50px;
@@ -35,6 +36,7 @@
   color: $pink;
   border: 1px solid $pink;
   text-decoration: none;
+  background-color: transparent;
   }
 }
 

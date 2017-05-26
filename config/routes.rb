@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'messages/conversations'
   get 'users/requests'
+  get 'users/missions'
   get 'users/profile_edit'
   put 'users/profile_update'
 
